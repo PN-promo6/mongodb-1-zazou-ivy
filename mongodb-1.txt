@@ -1,0 +1,75 @@
+Exercice 1
+use twisted_db;
+
+Exercice 2
+show databases;
+
+Exercice 3
+use crooked_db;
+db.createCollection("users");
+show databases;
+
+Exercice 4
+use fake_db;
+db.createCollection("fake_users");
+db.createCollection("fake_customers");
+show collections;
+
+Exercice 5
+db.fake_users.insert({name:"Mick",location:"Chicago",age:64});
+
+Exercice 6
+use magic_db;
+db.createCollection("magic_users");
+db.magic_users.insert({name:"Johnson"});
+db.magic_users.find();
+
+Exercice 7
+db.createCollection("magic_products");
+db.magic_products.insert({name:"Crazy wine"});
+db.magic_products.insert({name:"Weird shoes"});
+db.magic_products.find();
+db.magic_products.findOne();
+
+Exercice 8
+use magic_db;
+db.users.find().pretty();
+
+Exercice 9
+db.users.find({"age":20}).pretty();
+
+Exercice 10
+db.products.find({"on_sale":true, "price":100}).pretty();
+
+Exercice 11
+db.bands.find({"members":"Eleni"}).pretty();
+
+Exercice 12
+db.bands.find({"members":{$in:["Eleni","Doll"]}});
+
+Exercice 13
+db.bands.find({"creation_date":{$lt:2010}});
+
+Exercice 14
+db.bands.find({"creation_date":{$gt:2010},"adress.city"="Coimbra"});
+
+Exercice 15
+db.players.find({"team":"Seattle Supersonics"});
+
+Exercice 16
+db.players.find({"jerseyNumber":40});
+
+Exercice 17
+db.players.find({"previousTeams.":"Chicago Bulls"});
+
+Exercice 18
+db.players.find("previousTeams:"{$in:["Chicago Bulls","Miami Heat"]});
+
+Exercice 19
+db.players.find("previousTeams:"{$all:["Chicago Bulls","Miami Heat"]});
+
+Exercice 20
+db.players.find({"age":{$gt:30});
+
+Exercice 21
+db.bands.find({"birthPlace.country"="Spain"});
